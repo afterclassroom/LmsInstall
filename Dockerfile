@@ -35,6 +35,7 @@ RUN /pd_build/ruby2.2.sh
 RUN /pd_build/nodejs.sh
 
 # ...put your own build instructions here...
+RUN npm -g update
 RUN npm install bower -g
 RUN rm -f /etc/service/nginx/down
 RUN rm /etc/nginx/sites-enabled/default
