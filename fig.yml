@@ -1,0 +1,27 @@
+web:  
+  build: .
+  working_dir: /home/app/webapp/go_to_classroom
+  ports:
+    - "80:80"
+    - "3000:3000"
+  links:
+    - db
+    - elasticsearch
+  environment:
+    RAILS_ENV: "production"
+    PASSENGER_APP_ENV: "production"
+    SECRET_KEY_BASE: "3eb6db5a9026c547c72708438d496d942e976b252138db7e4e0ee5edd7539457d3ed0fa02ee5e7179420ce5290462018591adaf5f42adcf855da04877827def2"
+db:
+  build: mysql/5.7/.
+  ports:
+    - "3306"
+  environment:
+    MYSQL_DATABASE: lms_production
+    MYSQL_ROOT_PASSWORD: root
+
+elasticsearch:
+  build: elasticsearch/.
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+
