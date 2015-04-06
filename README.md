@@ -23,4 +23,5 @@ Install
 
 Run file install.sh
 
+    $ chmod +x install.sh
     $ ./install.sh
