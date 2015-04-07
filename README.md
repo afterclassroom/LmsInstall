@@ -10,7 +10,7 @@ Script for install Lms
 Get Lms install script
 -------------
 
-    $ git clone https://github.com/afterclassroom/lms_install.git
+    $ sudo git clone https://github.com/afterclassroom/lms_install.git
 
 Install
 -------------
@@ -23,5 +23,5 @@ Install
 
 Run file install.sh
 
-    $ chmod +x install.sh
+    $ sudo chmod +x install.sh
     $ sudo ./install.sh
