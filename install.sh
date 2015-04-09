@@ -17,9 +17,9 @@ if [ "" == "$PKG_OK" ]; then
   sudo curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
 fi
 
-sudo fig build  --no-cache
+fig build  --no-cache
 
-sudo fig up -d
+fig up -d
 
-sudo fig run web rake db:migrate bower:install
+fig run web rake db:migrate bower:install
 
