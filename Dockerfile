@@ -35,7 +35,6 @@ RUN /pd_build/ruby2.2.sh
 RUN /pd_build/nodejs.sh
 
 # ...put your own build instructions here...
-RUN npm -g update
 RUN npm install bower -g
 RUN rm -f /etc/service/nginx/down
 RUN rm /etc/nginx/sites-enabled/default
@@ -47,6 +46,7 @@ RUN sudo -u app -H git clone -b lms https://0425f933fa963abb745bfaf637f906e52572
 ADD database.yml /home/app/webapp/go_to_classroom/config/database.yml
 RUN chmod -R g+w /home/app/webapp/go_to_classroom/log
 WORKDIR /home/app/webapp/go_to_classroom
+RUN sudo -u app -H bundle config build.nokogiri --use-system-libraries
 RUN sudo -u app -H bundle install --path vendor/bundle
 RUN rake tmp:cache:clear
 USER root
