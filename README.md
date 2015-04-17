@@ -21,6 +21,8 @@ Install
 
 > Edit file webapp.conf change domain www.pesome.com with your Lms domain
 
+> Insert Amazon S3 to file s3.yml
+
 Run file install.sh
 
     $ sudo chmod +x install.sh
