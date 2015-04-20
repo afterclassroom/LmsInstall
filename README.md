@@ -31,3 +31,4 @@ Run file install.sh
     $ docker-enter root_web_1
     $ cd /home/app/webapp/go_to_classroom
     $ sudo -u app -H rake RAILS_ENV=production db:migrate assets:precompile
+    $ exit
