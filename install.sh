@@ -30,6 +30,4 @@ cd docker-enter & gcc docker-enter.c -o docker-enter & sudo mv ./docker-enter /u
 
 fig build --no-cache
 
-fig run web sudo -u app -H rake RAILS_ENV=production db:migrate assets:precompile
-
 fig up --no-recreate -d
