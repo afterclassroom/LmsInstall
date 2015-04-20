@@ -18,11 +18,17 @@ if [ "" == "$PKG_OK" ]; then
   curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
 fi
 
+chmod +x  mysql/5.7/docker-entrypoint.sh
+
+chmod +x  mysql/update.sh
+
+./update.sh
+
 git clone https://github.com/Pithikos/docker-enter.git docker-enter
 
 cd docker-enter & gcc docker-enter.c -o docker-enter & sudo mv ./docker-enter /usr/bin
 
-fig build # --no-cache
+fig build --no-cache
 
 fig run web sudo -u app -H rake RAILS_ENV=production db:migrate assets:precompile
 
